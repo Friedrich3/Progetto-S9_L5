@@ -3,3 +3,16 @@ html, body{
   padding: 0;
   box-sizing: border-box;
 }
+
+footer i:hover{
+  cursor:pointer;
+  color: #939fa8;
+}
+footer li a{
+  text-decoration: none;
+  color:#6C757D;
+}
+footer li a:hover,footer li a:visited{
+  text-decoration: underline;
+ 
+}
