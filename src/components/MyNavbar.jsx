@@ -4,7 +4,7 @@ const MyNavbar = function () {
   return (
     <header className="container-fluid">
     <Row>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="black" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand >
             <img

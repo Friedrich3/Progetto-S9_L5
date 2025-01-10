@@ -2,8 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const MyFooter = function () {
   return (
-    <footer className="bg-dark text-secondary pt-5" >
-    <Container fluid>
+    <footer className="bg-black text-secondary pt-5" >
+    <Container >
       <Row className="pb-3">
         <Col>
           <i className="bi bi-facebook fs-2 pe-4"></i>
@@ -13,7 +13,7 @@ const MyFooter = function () {
         </Col>
       </Row>
       <Row>
-        <Col className="md-3">
+        <Col className="col-md-3">
           <ul className="list-unstyled lh-lg">
             <li>
               <a href="">Audio and Subtitles</a>

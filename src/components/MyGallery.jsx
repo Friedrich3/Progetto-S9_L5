@@ -9,32 +9,32 @@ const responsive = {
   desktopLarge: {
     breakpoint: { max: 3000, min: 1920 },
     items: 6,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 2, //Optional default to one *preso dalla documentazione ufficiale*
   },
   desktop: {
     breakpoint: { max: 1920, min: 1440 },
     items: 5,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 2,
   },
   desktopSmall: {
     breakpoint: { max: 1440, min: 1024 },
     items: 4,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 2,
   },
   tabletVert: {
     breakpoint: { max: 1024, min: 768 },
     items: 3,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 2,
   },
   tablet: {
     breakpoint: { max: 768, min: 576 },
     items: 2,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 2,
   },
   mobile: {
     breakpoint: { max: 576, min: 0 },
     items: 2,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 2,
   },
 };
 
