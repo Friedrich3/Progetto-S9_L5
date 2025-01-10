@@ -8,9 +8,9 @@ class MyHome extends Component {
         <Container fluid>
         {/* QUESTA SEZIONE AVRA' al suo interno le tre gallerie che riceveranno come props cosa cercare */}
         <h3 className=" text-light">Altri Titoli per Te</h3>
-        <MyGallery research='Lord of the Rings' />
+        <MyGallery research='Transformers' />
         <MyGallery research='Star Wars' />
-        <MyGallery research='Alien' />
+        <MyGallery research='Godzilla' />
         </Container>
     </main>;
   }

@@ -29,7 +29,7 @@ const MyNavbar = function () {
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link >Movies</Nav.Link>
+                  <Nav.Link active >Movies</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link >Recently Added</Nav.Link>

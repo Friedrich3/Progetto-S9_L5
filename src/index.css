@@ -14,5 +14,14 @@ footer li a{
 }
 footer li a:hover,footer li a:visited{
   text-decoration: underline;
- 
+  
+}
+
+.custom-text{
+  display: -webkit-box;
+  -webkit-box-direction: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 3rem;
 }
