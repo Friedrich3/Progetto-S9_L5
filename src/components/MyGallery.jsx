@@ -2,7 +2,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Component } from "react";
-import { Container } from "react-bootstrap";
+import { Alert, Container, Spinner } from "react-bootstrap";
 import EachFilm from "./EachFilm";
 
 const responsive = {
@@ -40,7 +40,15 @@ const responsive = {
 
 class MyGallery extends Component {
   state = {
-    filmList: [], //ARRAY CHE VERRA RIEMPITO DOPO LA FETCH
+    films: {
+      filmList: [], //ARRAY CHE VERRA RIEMPITO DOPO LA FETCH
+    },
+    error: {
+      isError: false,
+    },
+    loading: {
+      isLoading: true,
+    },
   };
 
   fetchData = async () => {
@@ -53,11 +61,21 @@ class MyGallery extends Component {
       const response = await fetch(url, {
         method: "GET",
       });
+
       if (response.ok) {
         let data = await response.json();
-        this.setState({
-          filmList: data.Search,
-        });
+        if (data.Response !== "False")
+          this.setState({
+            films: { filmList: data.Search },
+            error: { isError: false },
+            loading: { isLoading: false },
+          });
+        else {
+          this.setState({
+            error: { isError: true },
+            loading:{ isLoading: false}
+          });
+        }
       } else {
         throw new Error("Problema con fetch");
       }
@@ -74,20 +92,46 @@ class MyGallery extends Component {
     return (
       <>
         {/* // QUI SARANNO RIUNITI I COMPONENTI DELLE CARTE GENERATE DALLA FETCH DI UNA PROPS PASSATA COME PARAMETRO DI 'RICERCA'  */}
-        <Container fluid>
-          <Carousel
-            responsive={responsive}
-            // sliderClass="carousel-item-padding-40-px"
-            infinite={false}
-            keyBoardControl={true}
-            customTransition="transform 500ms ease-in-out"
-            transitionDuration={1000}
-          >
-            {this.state.filmList.map((film) => {
-              return <EachFilm film={film} key={film.imdbID} />;
-            })}
-          </Carousel>
-          ;
+        <Container fluid className="py-3">
+          {
+            // LOADING HANDLER
+            this.state.loading.isLoading && (
+              <>
+                <Spinner animation="border" variant="white" />
+                <span className="text-white ">Loading...</span>
+              </>
+            )
+          }
+          {
+            // ERROR HANDLER
+            this.state.error.isError && (
+              <>
+                <Alert variant="danger">
+                  <Alert.Heading>
+                    Oh snap! The films you are searching for are unavailable!
+                  </Alert.Heading>
+                  <p>
+                    It seems you&apos;ve entered an incorrect word. Please check
+                    the spelling and try again
+                  </p>
+                </Alert>
+              </>
+            )
+          }
+          {this.state.loading.isLoading === false && (
+            <Carousel
+              responsive={responsive}
+              // sliderClass="carousel-item-padding-40-px"
+              infinite={false}
+              keyBoardControl={true}
+              customTransition="transform 500ms ease-in-out"
+              transitionDuration={1000}
+            >
+              {this.state.films.filmList.map((film) => {
+                return <EachFilm film={film} key={film.imdbID} />;
+              })}
+            </Carousel>
+          )}
         </Container>
       </>
     );
