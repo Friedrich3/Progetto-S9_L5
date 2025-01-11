@@ -16,6 +16,7 @@ class SearchCarousel extends Component {
   render() {
     return (
       <>
+      {/* Funziona solo se si preme sul bottone search! TODO da fixare */}
         <Container className="py-4">
           <Form
             onSubmit={(e) => {

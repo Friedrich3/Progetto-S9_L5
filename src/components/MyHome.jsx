@@ -11,7 +11,8 @@ class MyHome extends Component {
     return (
       <main className="bg-black container-fluid">
         <h2 className="text-light">Movies</h2>
-        {/* SERVE PER CREARE UN CAROSELLO DINAMICO IN BASE ALLA SCRITTURA DI UNA PAROLA CHIAVE  */}
+        {/* SERVE PER CREARE UN CAROSELLO DINAMICO IN BASE ALLA SCRITTURA DI UNA PAROLA CHIAVE  
+          FUNZIONA SOLO SE SI PREME IL TASTO BOTTONE SEARCH*/}
         <SearchCarousel />
         
         

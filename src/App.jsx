@@ -6,13 +6,14 @@ import AccountPage from "./components/AccountPage";
 import SettingsPage from "./components/SettingsPage";
 
 
-
+// DECOMMENTARE i vari componenti per farli apparire 
+// TODO dropdownmenu piccolo con la pagina da visualizzare (solo temporaneo)
 function App() {
   return <>
   <MyNavbar />
-  {/* <MyHome /> */}
+  <MyHome />
   {/* <AccountPage /> */}
-  <SettingsPage />
+  {/* <SettingsPage /> */}
   <MyFooter />
   </>;
 }
