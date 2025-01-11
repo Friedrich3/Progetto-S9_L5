@@ -96,10 +96,10 @@ class MyGallery extends Component {
           {
             // LOADING HANDLER
             this.state.loading.isLoading && (
-              <>
+              <div className="text-center">
                 <Spinner animation="border" variant="white" />
                 <span className="text-white ">Loading...</span>
-              </>
+              </div>
             )
           }
           {
