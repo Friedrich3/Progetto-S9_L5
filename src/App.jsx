@@ -3,6 +3,7 @@ import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import MyHome from "./components/MyHome";
 import AccountPage from "./components/AccountPage";
+import SettingsPage from "./components/SettingsPage";
 
 
 
@@ -10,7 +11,8 @@ function App() {
   return <>
   <MyNavbar />
   {/* <MyHome /> */}
-  <AccountPage />
+  {/* <AccountPage /> */}
+  <SettingsPage />
   <MyFooter />
   </>;
 }
